@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 
 @Mixin(PacketByteBuf.class)
@@ -22,7 +22,7 @@ public class MixinPacketByteBuf {
         if (!this.readBoolean()) return ItemStack.EMPTY;
 
         ItemStack itemstack = new ItemStack(Item.byRawId(this.readVarInt()), this.readByte());
-        itemstack.setTag(this.readCompoundTag());
+        itemstack.setTag(this.readNbt());
         if (itemstack.getTag() != null) CraftItemStack.setItemMeta(itemstack, CraftItemStack.getItemMeta(itemstack));
         return itemstack;
     }
@@ -38,7 +38,7 @@ public class MixinPacketByteBuf {
     }
 
     @Shadow
-    public CompoundTag readCompoundTag() {
+    public NbtCompound readNbt() {
         return null;
     }
 

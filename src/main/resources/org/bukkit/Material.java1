@@ -2579,6 +2579,10 @@ public enum Material implements Keyed, com.javazilla.bukkitfabric.interfaces.IMi
     POTTED_CRIMSON_ROOTS(13852),
     POTTED_WARPED_ROOTS(6403),
 
+    // CARDBOARD 1.17 MATERIALS
+    // IF YOU HAVE A CRASH DUE TO "Unknown Bukkit Material" ADD IT HERE!
+    GLOW_INK_SAC(6404),
+
     // ----- MODDED MATERIALS-START -----
 
 

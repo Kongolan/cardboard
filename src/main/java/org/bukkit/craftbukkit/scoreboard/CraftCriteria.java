@@ -12,7 +12,7 @@ public class CraftCriteria {
 
     static {
         ImmutableMap.Builder<String, CraftCriteria> defaults = ImmutableMap.builder();
-        for (Map.Entry<?, ?> entry : ((Map<?, ?>) ScoreboardCriterion.OBJECTIVES).entrySet())
+        for (Map.Entry<?, ?> entry : ((Map<?, ?>) ScoreboardCriterion.CRITERIA).entrySet())
             defaults.put(entry.getKey().toString(), new CraftCriteria((ScoreboardCriterion) entry.getValue()));
         DEFAULTS = defaults.build();
         DUMMY = DEFAULTS.get("dummy");
